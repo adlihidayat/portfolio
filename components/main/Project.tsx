@@ -44,9 +44,9 @@ const Project = () => {
       </div>
       <Link
         href={"/projects"}
-        className=" bg-[#00000070] hover:opacity-50 duration-300  text-[10px] lg:text-[12px]  py-[6px] px-6 lg:px-10 lg:py-2 rounded-full"
+        className=" bg-[#00000070] hover:opacity-50 duration-300  text-[10px] lg:text-[12px]  py-[8px] px-6 lg:px-10 lg:py-2 rounded-full"
       >
-        SEE MORE
+        MORE PROJECTS
       </Link>
     </section>
   );

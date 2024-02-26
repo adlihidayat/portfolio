@@ -38,6 +38,7 @@ const Header = () => {
       <button
         onClick={() => setIsActive(!isActive)}
         className=" flex flex-col space-y-1 md:space-y-[5px] transition"
+        aria-label="menu toogle"
       >
         <div className="w-6 md:w-8 h-[1px] md:h-[2px] bg-white"></div>
         <div className="w-6 md:w-8 h-[1px] md:h-[2px] bg-white"></div>

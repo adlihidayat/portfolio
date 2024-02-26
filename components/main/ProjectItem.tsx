@@ -14,7 +14,7 @@ const ProjectItem = ({ img, name, desc, tech1, tech2, tech3 }: any) => {
           alt=""
           width={400}
           height={400}
-          className=" w-full h-full group-hover:scale-105 duration-300 ease-in-out"
+          className=" w-full h-full object-cover group-hover:scale-105 duration-300 ease-in-out"
         />
       </div>
       <h2 className="w-[90%] font-semibold mb-1 lg:mb-[6px] lg:text-xl capitalize">

@@ -10,7 +10,11 @@ const Sidebar = () => {
         <span>WEBSITE</span>
       </div>
       <div className="flex flex-col items-center space-y-3">
-        <a href="" className=" hover:opacity-50 duration-300 ease-in-out">
+        <a
+          href=""
+          className=" hover:opacity-50 duration-300 ease-in-out"
+          aria-label="go to linkedin profile"
+        >
           <Image
             src={"/socialMedia/x.svg"}
             alt=""
@@ -19,7 +23,11 @@ const Sidebar = () => {
             className="w-[18px]"
           />
         </a>
-        <a href="" className=" hover:opacity-50 duration-300 ease-in-out">
+        <a
+          href=""
+          className=" hover:opacity-50 duration-300 ease-in-out"
+          aria-label="go to linkedin profile"
+        >
           <Image
             src={"/socialMedia/linkedIn.svg"}
             alt=""
@@ -28,7 +36,11 @@ const Sidebar = () => {
             className="w-6 "
           />
         </a>
-        <a href="" className=" hover:opacity-50 duration-300 ease-in-out">
+        <a
+          href=""
+          className=" hover:opacity-50 duration-300 ease-in-out"
+          aria-label="go to linkedin profile"
+        >
           <Image
             src={"/socialMedia/tiktok.svg"}
             alt=""
