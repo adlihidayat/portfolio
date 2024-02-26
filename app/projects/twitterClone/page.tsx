@@ -28,9 +28,10 @@ const page = () => {
           login.
         </p>
         <p className=" w-full pb-5">
-          &emsp;This is my first fullstack website. I choose firebase since it's
-          easy for someone who doesnt have backend background like me. The
-          firebase will save the content of a tweet and the user who send it.
+          &emsp;This is my first fullstack website. I choose firebase since
+          it&apos;s easy for someone who doesnt have backend background like me.
+          The firebase will save the content of a tweet and the user who send
+          it.
         </p>
         <div className="pb-5">
           <h2 className=" text-base font-semibold lg:text-xl mb-2">

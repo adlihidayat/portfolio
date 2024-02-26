@@ -26,7 +26,7 @@ const page = () => {
           ordering.
         </p>
         <p className=" w-full pb-5">
-          &emsp;This is one of the most complicated website that i've ever
+          &emsp;This is one of the most complicated website that i&apos;ve ever
           build. This website has its own database to save the menu and the
           detail of it, the order of customer, etc. The authentication is using
           google api. The UI is elegant that suit the vibe of the restaurant.
