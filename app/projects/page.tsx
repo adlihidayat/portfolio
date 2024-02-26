@@ -41,7 +41,7 @@ const page = () => {
           tech3="SWR"
         />
         <ProjectItem
-          img="/projects/igaPanggang.webp"
+          img="/projects/igapanggang.webp"
           name="iga Panggang Wak Budi"
           desc="Small Restaurant Websites that provide the menu list and upcoming news of the restaurant"
           tech1="Nextjs"
