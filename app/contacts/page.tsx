@@ -14,7 +14,7 @@ const page = () => {
           className=" bg-[#0000004b] py-4 px-5 rounded-xl flex justify-betwen items-center space-x-4 transition"
         >
           <Image
-            src={"socialMedia/LinkedIn.svg"}
+            src={"socialMedia/linkedIn.svg"}
             alt=""
             width={20}
             height={20}
