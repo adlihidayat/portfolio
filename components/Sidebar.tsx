@@ -11,7 +11,7 @@ const Sidebar = () => {
       </div>
       <div className="flex flex-col items-center space-y-3">
         <a
-          href=""
+          href="https://twitter.com/DhiyaAdlii"
           className=" hover:opacity-50 duration-300 ease-in-out"
           aria-label="go to linkedin profile"
         >
@@ -24,7 +24,7 @@ const Sidebar = () => {
           />
         </a>
         <a
-          href=""
+          href="https://www.linkedin.com/in/dhiya-adli-hidayat/"
           className=" hover:opacity-50 duration-300 ease-in-out"
           aria-label="go to linkedin profile"
         >
@@ -37,7 +37,7 @@ const Sidebar = () => {
           />
         </a>
         <a
-          href=""
+          href="https://www.tiktok.com/@dhiyaadlihidayat"
           className=" hover:opacity-50 duration-300 ease-in-out"
           aria-label="go to linkedin profile"
         >
