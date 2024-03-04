@@ -16,7 +16,7 @@ const Consultation = () => {
           FREE CONSULTATION FOR YOUR WEB
         </h1>
         <a
-          href=""
+          href="mailto:adlihidayat30@gmail.com"
           className=" duration-300 ease-in-out hover:opacity-50 border border-transparent text-xs lg:text-[13px] text-black bg-white w-max py-1 px-3 xl:px-5 xl:py-[6px] rounded-full"
         >
           Email Me!
