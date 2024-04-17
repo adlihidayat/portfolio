@@ -58,7 +58,7 @@ const page = () => {
             </li>
             <li>
               <a
-                href="https://nextjs.org/"
+                href="https://firebase.google.com/"
                 className="font-semibold hover:underline"
               >
                 Firebase

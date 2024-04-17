@@ -41,7 +41,7 @@ const page = () => {
             </li>
             <li>
               <a
-                href="https://tailwindcss.com/"
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS"
                 className="font-semibold hover:underline"
               >
                 CSS

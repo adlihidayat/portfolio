@@ -56,7 +56,7 @@ const page = () => {
             </li>
             <li>
               <a
-                href="https://nextjs.org/"
+                href="https://www.mongodb.com/"
                 className="font-semibold hover:underline"
               >
                 MongoDb
@@ -65,7 +65,7 @@ const page = () => {
             </li>
             <li>
               <a
-                href="https://tailwindcss.com/"
+                href="https://www.prisma.io/"
                 className="font-semibold hover:underline"
               >
                 Prisma
@@ -74,7 +74,7 @@ const page = () => {
             </li>
             <li>
               <a
-                href="https://next-auth.js.org/"
+                href="https://www.framer.com/"
                 className="font-semibold hover:underline"
               >
                 Framer Motion

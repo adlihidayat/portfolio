@@ -70,7 +70,7 @@ const page = () => {
             </li>
             <li>
               <a
-                href="https://nextjs.org/"
+                href="https://www.mongodb.com/"
                 className="font-semibold hover:underline"
               >
                 MongoDb
@@ -79,7 +79,7 @@ const page = () => {
             </li>
             <li>
               <a
-                href="https://tailwindcss.com/"
+                href="https://www.prisma.io/"
                 className="font-semibold hover:underline"
               >
                 Prisma
@@ -94,6 +94,15 @@ const page = () => {
                 Pusher
               </a>{" "}
               Bi-directional hosted APIs to make realtime
+            </li>
+            <li>
+              <a
+                href="https://next-auth.js.org/"
+                className="font-semibold hover:underline"
+              >
+                NextAuth
+              </a>{" "}
+              Open-source authentication solution for Next js
             </li>
           </ul>
         </div>
