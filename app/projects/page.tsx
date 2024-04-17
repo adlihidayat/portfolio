@@ -17,6 +17,14 @@ const page = () => {
           tech3="MongoDB"
         />
         <ProjectItem
+          img="/projects/messendger.webp"
+          name="messendger"
+          desc="A realtime chat web app to connect people from around the world."
+          tech1="Nextjs"
+          tech2="Tailwind"
+          tech3="MongoDB"
+        />
+        <ProjectItem
           img="/projects/reellnnovate.webp"
           name="reellnnovate"
           desc="Company profile website for start up company that related to fishing."

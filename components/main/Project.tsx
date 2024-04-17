@@ -18,6 +18,14 @@ const Project = () => {
           tech3="MongoDB"
         />
         <ProjectItem
+          img="/projects/messendger.webp"
+          name="messendger"
+          desc="A realtime chat web app to connect people from around the world."
+          tech1="Nextjs"
+          tech2="Tailwind"
+          tech3="MongoDB"
+        />
+        <ProjectItem
           img="/projects/reellnnovate.webp"
           name="reellnnovate"
           desc="Company profile website for start up company that related to fishing."
@@ -32,14 +40,6 @@ const Project = () => {
           tech1="Nextjs"
           tech2="Tailwind"
           tech3="framer motion"
-        />
-        <ProjectItem
-          img="/projects/healthiez.webp"
-          name="healthiez"
-          desc="Niche website that provide informations about healthy food and detail of it."
-          tech1="Nextjs"
-          tech2="Tailwind"
-          tech3="SWR"
         />
       </div>
       <Link
