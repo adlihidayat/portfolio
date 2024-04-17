@@ -28,7 +28,7 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full bg-slate-00 flex justify-between items-center px-8 py-10 md:p-16 lg:px-24 xl:px-36 fixed top-0 z-40">
+    <header className="w-full bg-slate-00 flex justify-between items-center px-8 py-5 md:p-16 lg:px-24 xl:px-36 fixed top-0 z-40 ">
       <Link
         href={"/"}
         className={`${pacifico.className} md:text-xl cursor-pointer`}

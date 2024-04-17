@@ -20,7 +20,7 @@ const ProjectItem = ({ img, name, desc, tech1, tech2, tech3 }: any) => {
       <h2 className="w-[90%] font-semibold mb-1 lg:mb-[6px] lg:text-xl capitalize">
         {name}
       </h2>
-      <p className="w-[90%] text-xs lg:text-[13px] text-justify text-[#9e9e9e] mb-2 lg:mb-[10px]">
+      <p className="w-[90%] text-[13px] lg:text-sm text-justify text-[#9e9e9e] mb-2 lg:mb-[10px]">
         {desc}
       </p>
       <div className=" flex items-center w-[90%] space-x-1">

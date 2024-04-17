@@ -9,13 +9,13 @@ const elMessiri = El_Messiri({
 
 const Hero = () => {
   return (
-    <section className="flex flex-col items-center py-14 md:py-32 lg:py-40 xl:py-44 bg-slate300 w-72 md:w-[480px] lg:w-[600px] xl:w-[750px]">
+    <section className="flex flex-col items-center py-14 md:py-32 lg:py-40 xl:py-44 bg-slate300 w-72 sm:w-[480px] lg:w-[600px] xl:w-[750px]">
       <h1
-        className={`${elMessiri.className} text-center text-4xl md:text-6xl lg:text-7xl xl:text-[96px] xl:leading-[80px] mb-2`}
+        className={`${elMessiri.className} text-center text-[40px] leading-9 md:text-6xl lg:text-7xl xl:text-[96px] xl:leading-[80px] mb-4`}
       >
         FRONT END WEB DEVELOPER
       </h1>
-      <p className=" text-xs lg:text-sm text-center text-gray-400 w-[90%]">
+      <p className=" text-sm lg:text-base text-center text-gray-400 w-[90%]">
         Passionate front-end web developer crafting beautiful and impactful
         websites. I transform ideas into user-friendly experiences that
         captivate audiences and drive results.
