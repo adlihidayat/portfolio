@@ -9,6 +9,30 @@ const page = () => {
       </h1>
       <section className="w-72 md:w-[400px] lg:w-[650px] xl:w-[800px] grid grid-cols-1 gap-y-3 lg:gap-x-2 lg:grid-cols-2 mb-5 lg:mb-10">
         <ProjectItem
+          img="/projects/newsHub.webp"
+          name="news Hub"
+          desc="A website to provide users with up-to-date news from various sources."
+          tech1="Nextjs"
+          tech2="Tailwind"
+          tech3="framer motion"
+        />
+        <ProjectItem
+          img="/projects/coreAlign.webp"
+          name="core Align"
+          desc="A website to showcases Core Align new shoes with an immersive 3D experience"
+          tech1="Nextjs"
+          tech2="r3f"
+          tech3="framer motion"
+        />
+        <ProjectItem
+          img="/projects/wabread.webp"
+          name="wabread"
+          desc="A website an engaging 3D visual experience that showcases a store"
+          tech1="Nextjs"
+          tech2="Tailwind"
+          tech3="framer motion"
+        />
+        <ProjectItem
           img="/projects/serenityDining.webp"
           name="serenity Dining"
           desc="A Restaurant website that elegant and fancy vibe for high class people"
