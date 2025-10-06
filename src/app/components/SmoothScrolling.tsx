@@ -24,6 +24,13 @@ export default function SmoothScrolling({
 
     requestAnimationFrame(raf);
 
+    // Dispatch event when user scrolls
+    lenis.on("scroll", ({ velocity }) => {
+      window.dispatchEvent(
+        new CustomEvent("lenis-scroll", { detail: { velocity } })
+      );
+    });
+
     return () => {
       lenis.destroy();
     };
