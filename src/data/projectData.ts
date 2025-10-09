@@ -96,6 +96,7 @@ export const projectData: Project[] = [
       { name: 'Video Upload', description: 'Upload and manage videos' },
       { name: 'Streaming', description: 'Smooth video playback' },
     ],
+    featured: true,
   },
   {
     id: '4',
@@ -115,6 +116,7 @@ export const projectData: Project[] = [
       { name: 'Activity Tracking', description: 'Track daily activities' },
       { name: 'Nutrition Log', description: 'Log meals and calories' },
     ],
+    featured: true,
   },
   {
     id: '5',
