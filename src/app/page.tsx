@@ -2,59 +2,93 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import TextReveal from "@/components/animations/TextReveal";
-// import ContactSection from "/components/ContactSection";
 import { projectData } from "../data/projectData";
-// import { blogData } from "../data/blogData";
-import ContactSection from "./components/ContentSection";
 import { blogData } from "../data/blogData";
+import ContactSection from "./components/ContentSection";
+import Squares from "./components/Squares";
+import StackedProjectsSection from "./components/StackedProjectSectionProps";
+import BlogSection from "./components/BlogSection";
+import StatsSection from "./components/StatsSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
-  const projectsSectionRef = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Hero animation
+    // Hero animation with mask effect from bottom
     if (heroRef.current) {
-      gsap.from(".hero-title", {
-        opacity: 0,
-        y: 100,
-        duration: 1.2,
-        ease: "power3.out",
-      });
+      gsap.fromTo(
+        ".hero-title",
+        {
+          y: 100,
+        },
+        {
+          y: 0,
+          duration: 1.2,
+          ease: "power3.out",
+        }
+      );
+      gsap.fromTo(
+        ".hero-name",
+        {
+          y: 100,
+        },
+        {
+          y: 0,
+          duration: 1.2,
+          delay: 0.3,
+          ease: "power3.out",
+        }
+      );
 
-      gsap.from(".hero-subtitle", {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        delay: 0.3,
-        ease: "power3.out",
-      });
+      gsap.fromTo(
+        ".hero-subtitle",
+        {
+          x: -600,
+        },
+        {
+          x: 0,
+          duration: 2,
+          delay: 1.1,
+          ease: "power3.out",
+        }
+      );
+
+      gsap.fromTo(
+        ".hero-line",
+        {
+          y: 150,
+        },
+        {
+          y: 0,
+          duration: 1,
+          delay: 0.3,
+          ease: "power3.out",
+        }
+      );
 
       gsap.from(".hero-emoji", {
         opacity: 0,
         scale: 0,
         rotation: -180,
-        duration: 0.8,
+        duration: 1.5,
         delay: 0.5,
         ease: "back.out(1.7)",
       });
     }
 
-    // Projects section parallax
-    if (projectsSectionRef.current) {
-      gsap.to(".projects-bg", {
-        yPercent: 30,
-        ease: "none",
+    // Darken hero when projects section scrolls over it
+    if (overlayRef.current) {
+      gsap.to(overlayRef.current, {
+        opacity: 0.5,
         scrollTrigger: {
-          trigger: projectsSectionRef.current,
+          trigger: ".projects-section",
           start: "top bottom",
-          end: "bottom top",
+          end: "top 20%",
           scrub: true,
         },
       });
@@ -63,182 +97,85 @@ export default function Home() {
 
   const featuredProjects = projectData
     .filter((p: any) => p.featured)
-    .slice(0, 3);
-  const featuredBlogs = blogData.filter((b: any) => b.featured).slice(0, 2);
+    .slice(0, 5);
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      {/* Hero Section - Fixed Position */}
       <section
         ref={heroRef}
-        className="min-h-screen flex items-center justify-center px-6 pt-20 bg-gradient-to-b from-white to-gray-50"
+        className="fixed top-0 left-0 w-full h-screen flex items-center justify-center px-6 pt-20 overflow-hidden z-0"
       >
-        <div className="max-w-7xl w-full">
-          <div className="flex items-center gap-4 mb-6">
-            <h1 className="hero-title text-7xl md:text-9xl font-bold">
-              I CREATE MIND
-              <span className="relative inline-block">
-                <span className="hero-emoji absolute -top-8 -right-12 text-6xl">
-                  🤯
-                </span>
-                .
+        {/* Background */}
+        <div className="absolute inset-0 -z-10">
+          <Squares
+            speed={0.4}
+            squareSize={40}
+            direction="diagonal"
+            borderColor="#fff"
+            hoverFillColor="#222"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/90 to-amber-50/90" />
+        </div>
+
+        {/* Darkening Overlay */}
+        <div
+          ref={overlayRef}
+          className="absolute inset-0 bg-black opacity-0 pointer-events-none"
+        />
+
+        <div className="max-w-7xl w-full relative z-10">
+          <div className="w-full absolute flex flex-row justify-center z-10 -top-2">
+            <div className="overflow-hidden">
+              <span className="hero-title bg-orange-600 text-white px-5 py-1 rounded-full font-semibold text-xl mr-80 inline-block">
+                DHIYA ADLI HIDAYAT
               </span>
-            </h1>
+            </div>
           </div>
-          <div className="hero-subtitle max-w-md ml-auto">
-            <p className="text-lg text-gray-600 leading-relaxed">
-              I Spend Most Of My Time Teaching Machines How To Think, Breaking
-              Products That Work Too Well, Diving Deep Into The AI World, Always
-              Experimenting, Sometimes Breaking Things (On Purpose)
-            </p>
+          <div className="flex flex-col items-center gap-4 mb-20">
+            <div className="overflow-hidden">
+              <h1 className="hero-title text-7xl md:text-[150px] font-medium tracking-tighter text-primary">
+                I CREATE MIND
+                <span className="inline-block absolute">.</span>
+              </h1>
+            </div>
+            <span className="hero-emoji absolute -top-5 right-20 text-8xl">
+              😴
+            </span>
           </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section
-        ref={projectsSectionRef}
-        className="relative py-32 px-6 bg-gray-100 overflow-hidden"
-      >
-        <div className="projects-bg absolute inset-0 bg-gradient-to-b from-gray-50 to-white" />
-
-        <div className="relative max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <p className="text-sm text-gray-500 mb-4">PROJECTS</p>
-            {/* <TextReveal className="text-6xl md:text-8xl font-bold mb-4">
-              PROJECTS
-            </TextReveal> */}
-            <p className="text-xl text-gray-600">
-              ACTIVE CREATORS IN YOUR COUNTRY.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {/* {featuredProjects.map(({ project, index }: any) => (
-              <Link
-                key={project.id}
-                href={`/projects/${project.slug}`}
-                className="group"
-              >
-                <div
-                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
-                  style={{
-                    animationDelay: `${index * 0.1}s`,
-                  }}
-                >
-                  <div className="aspect-[4/3] bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                    <span className="text-white text-4xl font-bold opacity-50">
-                      {project.title.charAt(0)}
-                    </span>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-sm text-gray-500 mb-2">
-                      {project.category}
-                    </p>
-                    <h3 className="text-2xl font-bold mb-3 group-hover:text-blue-600 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-600">{project.shortDescription}</p>
-                  </div>
-                </div>
-              </Link>
-            ))} */}
-          </div>
-
-          <div className="text-center">
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white rounded-full hover:bg-gray-800 transition-colors"
-            >
-              <span>CHECK OTHER PROJECT (9+ WELLS)</span>
-              <span>→</span>
-            </Link>
+          <div className="w-full absolute flex flex-row justify-end items-center align-middle -mt-5">
+            <div className="overflow-hidden">
+              <div className="hero-line w-[2px] rounded-full h-28 bg-primary mr-5"></div>
+            </div>
+            <div className="overflow-hidden">
+              <p className="hero-subtitle text-2xl font-medium text-primary max-w-xl mr-20 leading-6 tracking-tighter">
+                I Spend Most Of My Time Teaching Machines How To Think, Breaking
+                Products That Work Too Well, Diving Deep Into The AI World,
+                Always Experimenting, Sometimes Breaking Things (On Purpose)
+              </p>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* Spacer to push content down */}
+      <div className="h-screen" />
+
+      {/* Projects Section - Scrolls Over Hero */}
+      <div className="relative z-10 projects-section">
+        <StackedProjectsSection projects={featuredProjects} />
+      </div>
+
+      {/* Blog Section Wrapper - Matches project background */}
+      <div className="relative z-10" style={{ backgroundColor: "#f5f5f5" }}>
+        <BlogSection posts={blogData} />
+      </div>
 
       {/* Stats Section */}
-      <section className="py-32 px-6 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
-            <div>
-              <p className="text-sm mb-4">Experience</p>
-              <div className="text-8xl font-bold mb-4">2</div>
-              <p className="text-gray-400">
-                Years Experience As OWNER / Freelance Officer Been At
-                NewLight999 08 Mar Also I Did Over Employee Years At Two Twenty
-              </p>
-            </div>
-            <div>
-              <p className="text-sm mb-4">Education</p>
-              <div className="text-8xl font-bold mb-4">10+</div>
-              <p className="text-gray-400">
-                Certification Or Event Attendance Got Includes From My Career
-                Time In School Activities & Other Special Events Where I Became
-                Young Educator
-              </p>
-            </div>
-            <div>
-              <p className="text-sm mb-4">Skill</p>
-              <div className="text-8xl font-bold mb-4">2</div>
-              <p className="text-gray-400">
-                I Am Proficient In 2 Full Stack Web/App/Game/Other Developer
-                Tools Blockchain Full Stack
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Preview Section */}
-      <section className="py-32 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            {/* <TextReveal className="text-6xl md:text-8xl font-bold mb-4">
-              LATEST POSTS
-            </TextReveal> */}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {/* {featuredBlogs.map(({ blog, index }: any) => (
-              <Link key={blog.id} href={`/blog`} className="group">
-                <div className="bg-gray-900 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500">
-                  <div className="aspect-video bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
-                    <span className="text-white text-6xl font-bold opacity-50">
-                      {blog.title.split(" ")[0].charAt(0)}
-                    </span>
-                  </div>
-                  <div className="p-8 text-white">
-                    <p className="text-sm text-gray-400 mb-4">
-                      {blog.category}
-                    </p>
-                    <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-400 transition-colors">
-                      {blog.title}
-                    </h3>
-                    <div className="flex items-center justify-between text-sm text-gray-400">
-                      <span>{blog.author}</span>
-                      <span>{blog.date}</span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))} */}
-          </div>
-
-          <div className="text-center">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-black text-white rounded-full hover:bg-gray-800 transition-colors"
-            >
-              <span>VIEW ALL POSTS</span>
-              <span>→</span>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <StatsSection />
 
       {/* Contact Section */}
-      <ContactSection />
+      <ContactSection posts={blogData} />
     </div>
   );
 }
