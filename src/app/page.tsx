@@ -175,7 +175,7 @@ export default function Home() {
       <StatsSection />
 
       {/* Contact Section */}
-      <ContactSection posts={blogData} />
+      <ContactSection />
     </div>
   );
 }
