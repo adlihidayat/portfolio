@@ -1,6 +1,7 @@
 import { FadeIn } from "@/components/FadeIn";
 import { Footer } from "@/components/Footer";
 import { ProjectGallery } from "@/components/ProjectGallery";
+import Image from "next/image";
 import { projects } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -127,7 +128,16 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   <div className="flex-1 flex flex-wrap gap-2 text-[12px]">
                     {project.techStack.map(tech => (
                       <div key={tech.name} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md border border-white/5 bg-[#111111]/50 text-text-secondary">
-                        {tech.logoUrl && <img src={tech.logoUrl} alt={tech.name} className={cn("w-3.5 h-3.5 object-contain opacity-80", tech.invert && "invert opacity-100")} />}
+                        {tech.logoUrl && (
+                          <Image 
+                            src={tech.logoUrl} 
+                            alt={tech.name} 
+                            width={14} 
+                            height={14} 
+                            unoptimized 
+                            className={cn("object-contain opacity-80", tech.invert && "invert opacity-100")} 
+                          />
+                        )}
                         <span className="font-medium text-[11px]">{tech.name}</span>
                       </div>
                     ))}

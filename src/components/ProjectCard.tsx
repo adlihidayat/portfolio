@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface ProjectCardProps {
   title: string;
@@ -14,11 +15,13 @@ export function ProjectCard({ title, description, slug, imagePath }: ProjectCard
       className="group flex flex-col gap-4 mb-2"
     >
       {/* Project Thumbnail Image */}
-      <div className="w-full aspect-video rounded-xl overflow-hidden border border-white/5 transition-transform group-hover:scale-[1.02] bg-bg-secondary">
-        <img 
+      <div className="w-full aspect-video rounded-xl overflow-hidden border border-white/5 transition-transform group-hover:scale-[1.02] bg-bg-secondary flex relative">
+        <Image 
           src={imagePath} 
           alt={title} 
-          className="w-full h-full object-cover"
+          fill
+          unoptimized={imagePath.startsWith('http')}
+          className="object-cover"
         />
       </div>
 

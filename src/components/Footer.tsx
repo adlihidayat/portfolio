@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
 
 export function Footer() {
@@ -10,11 +11,13 @@ export function Footer() {
           
           {/* Header row with Avatar & Name */}
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-8 rounded-full overflow-hidden bg-bg-secondary border border-white/10 shrink-0">
-              <img 
+            <div className="w-8 h-8 rounded-full overflow-hidden bg-bg-secondary border border-white/10 shrink-0 relative flex">
+              <Image 
                 src="https://ui-avatars.com/api/?name=Dhiya+Adli&background=2C2C2C&color=F7F7F7&size=150&bold=true" 
                 alt="Dhiya Adli hidayat" 
-                className="w-full h-full object-cover" 
+                fill
+                unoptimized
+                className="object-cover" 
               />
             </div>
             <div className="text-left">

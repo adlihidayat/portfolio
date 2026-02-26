@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ProjectList } from "@/components/ProjectList";
 import { projects, blogs } from "@/lib/data";
+import Image from "next/image";
 import Link from "next/link";
 import { Folder, Link as LinkIcon, Code2, Database, LayoutTemplate, Terminal } from "lucide-react";
 
@@ -48,8 +49,14 @@ export default function Home() {
             <FadeIn>
               {/* Avatar Block */}
               <div className="flex items-center gap-3.5 mb-10">
-                <div className="w-10 h-10 rounded-full overflow-hidden bg-bg-secondary border border-white/10 shrink-0">
-                  <img src="https://ui-avatars.com/api/?name=Dhiya+Adli&background=2C2C2C&color=F7F7F7&size=150&bold=true" alt="Dhiya Adli hidayat" className="w-full h-full object-cover" />
+                <div className="w-10 h-10 rounded-full overflow-hidden bg-bg-secondary border border-white/10 shrink-0 relative">
+                  <Image 
+                    src="https://ui-avatars.com/api/?name=Dhiya+Adli&background=2C2C2C&color=F7F7F7&size=150&bold=true" 
+                    alt="Dhiya Adli hidayat" 
+                    fill
+                    unoptimized
+                    className="object-cover" 
+                  />
                 </div>
                 <div>
                   <h2 className="font-semibold text-text-primary text-[16px] leading-tight">Dhiya Adli hidayat</h2>
@@ -194,8 +201,14 @@ export default function Home() {
                        </div>
                     </div>
                     {/* Thumbnail representation */}
-                    <div className="w-[120px] h-[75px] bg-bg-secondary border border-white/5 rounded overflow-hidden shrink-0 flex flex-col justify-center transition-transform group-hover:scale-105">
-                       <img src={blog.imageUrl} alt={blog.title} className="w-full h-full object-cover" />
+                    <div className="w-[120px] h-[75px] bg-bg-secondary border border-white/5 rounded overflow-hidden shrink-0 flex flex-col justify-center transition-transform group-hover:scale-105 relative">
+                       <Image 
+                         src={blog.imageUrl} 
+                         alt={blog.title} 
+                         fill
+                         unoptimized={blog.imageUrl.startsWith('http')}
+                         className="object-cover" 
+                       />
                     </div>
                   </a>
                 </FadeIn>

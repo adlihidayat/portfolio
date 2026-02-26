@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Compass, Home, Folder, Newspaper, SquareUser } from "lucide-react";
 
 export function FloatingNav() {
@@ -13,10 +14,12 @@ export function FloatingNav() {
           className="flex items-center justify-center w-6 h-5 rounded-full hover:scale-105 transition-transform"
           aria-label="Home"
         >
-          <img 
+          <Image 
             src="/logo.svg" 
             alt="logo" 
-            className="w-5 h-5 pl-1"
+            width={20}
+            height={20}
+            className="pl-1"
           />
         </Link>
         

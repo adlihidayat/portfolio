@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface ProjectGalleryProps {
@@ -25,10 +26,12 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
     <div className="flex flex-col gap-2 mb-6">
       {/* Main Preview Image */}
       <div className="w-full aspect-video rounded-xl overflow-hidden bg-[#111111] border border-white/5 relative group">
-        <img 
+        <Image 
           src={images[selectedIndex]} 
           alt={`${title} preview`} 
-          className="w-full h-full object-cover transition-all duration-300" 
+          fill
+          unoptimized={images[selectedIndex].startsWith('http')}
+          className="object-cover transition-all duration-300" 
         />
       </div>
 
@@ -46,7 +49,13 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
                   : "border-white/5 opacity-50 hover:opacity-100"
               )}
             >
-              <img src={img} alt={`${title} thumbnail ${i + 1}`} className="w-full h-full object-cover" />
+              <Image 
+                src={img} 
+                alt={`${title} thumbnail ${i + 1}`} 
+                fill
+                unoptimized={img.startsWith('http')}
+                className="object-cover" 
+              />
               {selectedIndex === i && (
                 <div className="absolute inset-0 ring-2 ring-white/20 rounded-lg pointer-events-none" />
               )}
