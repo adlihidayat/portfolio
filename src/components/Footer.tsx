@@ -43,7 +43,7 @@ export function Footer() {
           {/* Social Links */}
           <div className="flex items-center justify-center gap-4">
             <a 
-              href="#" 
+              href="mailto:adlihidayat30@gmail.com" 
               aria-label="Email"
               className="w-10 h-10 rounded-full bg-[#1D1D1D] flex items-center justify-center text-text-secondary hover:text-white transition-colors border border-white/5"
             >
@@ -57,14 +57,14 @@ export function Footer() {
               <Linkedin className="w-4 h-4 text-white" />
             </a>
             <a 
-              href="#" 
+              href="https://github.com/adlihidayat" 
               aria-label="GitHub"
               className="w-10 h-10 rounded-full bg-[#1D1D1D] flex items-center justify-center text-text-secondary hover:text-white transition-colors border border-white/5"
             >
               <Github className="w-4 h-4 text-white" />
             </a>
             <a 
-              href="#" 
+              href="https://x.com/DhiyaAdli30" 
               aria-label="Twitter"
               className="w-10 h-10 rounded-full bg-[#1D1D1D] flex items-center justify-center text-text-secondary hover:text-white transition-colors border border-white/5"
             >

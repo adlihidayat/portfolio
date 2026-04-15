@@ -26,7 +26,7 @@ export const projects: Project[] = [
     slug: "urban-ai",
     title: "Urban AI",
     description: "Built a complete AI-powered customer service and product knowledge assistant.",
-    images: ["/projects/urban-republic/thumbnail.webp", "https://placehold.co/600x400/1D1D1D/FFFFFF?text=Urban+AI+2", "https://placehold.co/600x400/1D1D1D/FFFFFF?text=Urban+AI+3"],
+    images: ["/projects/urban-republic/thumbnail.webp", "/projects/urban-republic/mock.webp", "/projects/urban-republic/ui-design.webp"],
     createdAt: "Jan 2026",
     lastUpdated: "Mar 2026",
     githubUrl: "https://github.com/adlih/urban-ai",
