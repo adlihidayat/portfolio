@@ -25,13 +25,13 @@ export const projects: Project[] = [
   {
     slug: "urban-ai",
     title: "Urban AI",
-    description: "Built a complete AI-powered customer service and product knowledge assistant.",
+    description: "It is an incredibly smart, conversational shopping assistant built to make buying tech completely effortless. Instead of forcing customers to click through endless filters or type exact product names, they can just talk to it naturally. If a customer says, 'I need a rugged smartwatch for scuba diving that lasts at least a week on a single charge,' the assistant instantly finds the perfect match, explains exactly why it fits their lifestyle, and even politely suggests a compatible power bank for their trip. It takes the frustration out of online shopping by acting as a personalized, 24/7 expert guide that helps people confidently find and buy the exact gear they need. 🚀",
     images: ["/projects/urban-republic/thumbnail.webp", "/projects/urban-republic/mock.webp", "/projects/urban-republic/ui-design.webp"],
     createdAt: "Jan 2026",
     lastUpdated: "Mar 2026",
     githubUrl: "https://github.com/adlih/urban-ai",
     liveUrl: "https://example.com/urban-ai",
-    status: "drafted",
+    status: "Completed",
     keyFeatures: ["RAG Search", "Autonomous Agent", "Dynamic Filtering"],
     techStack: [
       { name: "Next.js", logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
