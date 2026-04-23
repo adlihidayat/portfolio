@@ -50,7 +50,7 @@ export function Footer() {
               <Mail className="w-4 h-4 text-white" />
             </a>
             <a 
-              href="#" 
+              href="https://www.linkedin.com/in/dhiya-adli-hidayat/" 
               aria-label="LinkedIn"
               className="w-10 h-10 rounded-full bg-[#1D1D1D] flex items-center justify-center text-text-secondary hover:text-white transition-colors border border-white/5"
             >

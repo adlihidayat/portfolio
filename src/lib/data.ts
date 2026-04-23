@@ -29,8 +29,8 @@ export const projects: Project[] = [
     images: ["/projects/urban-republic/thumbnail.webp", "/projects/urban-republic/mock.webp", "/projects/urban-republic/ui-design.webp"],
     createdAt: "Jan 2026",
     lastUpdated: "Mar 2026",
-    githubUrl: "https://github.com/adlih/urban-ai",
-    liveUrl: "https://example.com/urban-ai",
+    githubUrl: "https://huggingface.co/spaces/dhiyaadli123/urban-republic-ai/tree/main",
+    liveUrl: "https://urban-republic-interface.vercel.app/",
     status: "Completed",
     keyFeatures: ["RAG Search", "Autonomous Agent", "Dynamic Filtering"],
     techStack: [
