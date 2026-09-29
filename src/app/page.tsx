@@ -2,6 +2,7 @@ import { FadeIn } from "@/components/FadeIn";
 import { Footer } from "@/components/Footer";
 import { ProjectList } from "@/components/ProjectList";
 import { CodingActivity } from "@/components/CodingActivity";
+import { LoadingScreen } from "@/components/LoadingScreen";
 import { projects, blogs } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,6 +21,7 @@ import {
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-white text-body font-sans text-sm md:text-base font-medium">
+      <LoadingScreen />
       <main className="flex-1">
         <div className="container mx-auto max-w-md md:max-w-xl lg:max-w-2xl px-5 pt-12 sm:pt-24">
           {/* SECTION 1: PROFILE HEADER & BIO */}
@@ -42,7 +44,9 @@ export default function Home() {
                   </h1>
                   <Verified className="w-4.5 h-4.5 fill-blue-500 text-white shrink-0" />
                 </div>
-                <p className="text-subtle mt-0">AI Engineer</p>
+                <p className="mt-0 font-medium text-stone-500 text-sm sm:text-base">
+                  AI Agent Engineer
+                </p>
               </div>
             </div>
           </FadeIn>
