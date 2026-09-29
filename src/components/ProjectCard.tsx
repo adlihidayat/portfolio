@@ -76,6 +76,7 @@ export function ProjectCard({
                 src={img}
                 alt={`${title} screenshot ${idx + 1}`}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 unoptimized={img.startsWith("http")}
                 className={`object-cover object-top absolute inset-0 transition-opacity duration-700 ${
                   isActive ? "opacity-100 z-10" : "opacity-0 z-0"

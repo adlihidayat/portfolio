@@ -30,6 +30,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
           src={images[selectedIndex]}
           alt={`${title} preview`}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           unoptimized={images[selectedIndex].startsWith("http")}
           className="object-cover transition-all duration-300"
         />
@@ -53,6 +54,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
                 src={img}
                 alt={`${title} thumbnail ${i + 1}`}
                 fill
+                sizes="(max-width: 768px) 50vw, 25vw"
                 unoptimized={img.startsWith("http")}
                 className="object-cover"
               />

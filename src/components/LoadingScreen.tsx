@@ -12,12 +12,22 @@ const greetings = [
   "Halo",
 ];
 
+// Track if the intro has played during this SPA session to prevent replaying on navigation back
+let hasPlayedIntro = false;
+
 export function LoadingScreen() {
   const [index, setIndex] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
-  const [isUnmounted, setIsUnmounted] = useState(false);
+  const [isUnmounted, setIsUnmounted] = useState(hasPlayedIntro);
+
+  // Mark as played as soon as it mounts on the client
+  useEffect(() => {
+    hasPlayedIntro = true;
+  }, []);
 
   useEffect(() => {
+    if (isUnmounted) return; // Skip logic if already unmounted (navigating back)
+
     if (index < greetings.length - 1) {
       const timer = setTimeout(() => {
         setIndex((prev) => prev + 1);
