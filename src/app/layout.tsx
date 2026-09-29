@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { FloatingNav } from "@/components/FloatingNav";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Dhiya Adli Portfolio | Home",
-  description: "I'm an AI Engineer specializing in NLP, recommendation systems, and intelligent automation. I design end-to-end architectures from data pipelines to model deployment that focused on scalability, performance, and measurable business impact.",
+  description:
+    "I'm an AI Engineer specializing in NLP, recommendation systems, and intelligent automation. I design end-to-end architectures from data pipelines to model deployment that focused on scalability, performance, and measurable business impact.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -26,14 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased border-b border-white/10`}
+        className={`${inter.variable} font-sans antialiased border-b border-white/10`}
       >
         <FloatingNav />
-        <div className="mx-[2px] md:mx-auto md:max-w-2xl lg:max-w-3xl border-x border-white/10 min-h-screen flex flex-col relative">
+        <div className="mx-0.5 md:mx-auto md:max-w-2xl lg:max-w-3xl border-x border-white/10 min-h-screen flex flex-col relative">
           {children}
         </div>
-        {/* Global Bottom Fading Overlay */}
-        <div className="fixed bottom-0 left-0 w-full h-24 bg-linear-to-t from-[#0C0C0C] to-transparent pointer-events-none z-50" />
       </body>
     </html>
   );

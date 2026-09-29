@@ -26,35 +26,35 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
     <div className="flex flex-col gap-2 mb-6">
       {/* Main Preview Image */}
       <div className="w-full aspect-video rounded-xl overflow-hidden bg-[#111111] border border-white/5 relative group">
-        <Image 
-          src={images[selectedIndex]} 
-          alt={`${title} preview`} 
+        <Image
+          src={images[selectedIndex]}
+          alt={`${title} preview`}
           fill
-          unoptimized={images[selectedIndex].startsWith('http')}
-          className="object-cover transition-all duration-300" 
+          unoptimized={images[selectedIndex].startsWith("http")}
+          className="object-cover transition-all duration-300"
         />
       </div>
 
       {/* Thumbnails Selection */}
       {images.length > 1 && (
-        <div className="grid grid-cols-4 gap-2 align-middle">
+        <div className="grid grid-cols-2 gap-2 align-middle">
           {images.slice(0, 4).map((img, i) => (
-            <button 
-              key={i} 
+            <button
+              key={i}
               onClick={() => setSelectedIndex(i)}
               className={cn(
                 "aspect-video rounded-lg overflow-hidden bg-[#111111] border transition-all cursor-pointer relative",
-                selectedIndex === i 
-                  ? "border-white/50 opacity-100" 
-                  : "border-white/5 opacity-50 hover:opacity-100"
+                selectedIndex === i
+                  ? "border-white/50 opacity-100"
+                  : "border-white/5 opacity-50 hover:opacity-100",
               )}
             >
-              <Image 
-                src={img} 
-                alt={`${title} thumbnail ${i + 1}`} 
+              <Image
+                src={img}
+                alt={`${title} thumbnail ${i + 1}`}
                 fill
-                unoptimized={img.startsWith('http')}
-                className="object-cover" 
+                unoptimized={img.startsWith("http")}
+                className="object-cover"
               />
               {selectedIndex === i && (
                 <div className="absolute inset-0 ring-2 ring-white/20 rounded-lg pointer-events-none" />

@@ -40,7 +40,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <div className="container mx-auto max-w-2xl">
             <FadeIn>
               {/* Back to Projects */}
-              <Link href="/projects" className="inline-flex items-center text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors mb-8">
+              <Link href="/#projects" className="inline-flex items-center text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors mb-8">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Projects
               </Link>
@@ -95,54 +95,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   </div>
                 </div>
 
-                {/* Row: Status */}
-                <div className="flex flex-row sm:flex-row sm:items-center p-4 border-b border-white/5 gap-2 sm:gap-4">
-                  <div className="flex items-center gap-2 w-20 sm:w-1/3 min-w-[120px]">
-                    <Folder className="w-4 h-4 text-text-secondary" />
-                    <span className="text-[13px] text-text-primary font-medium">Status</span>
-                  </div>
-                  <div className="flex-1 flex items-center">
-                    <div className={cn(
-                      "flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium border tracking-wide",
-                      (project.status === "complete" || project.status === "Completed") && "bg-[#88e7ce] text-[#0b3b2a] border-[#0b3b2a]/10",
-                      project.status === "drafted" && "bg-[#bcc9f8] text-[#140f52] border-[#3730A3]/10",
-                      project.status === "not started" && "bg-neutral-800 text-neutral-400 border-neutral-400/10"
-                    )}>
-                      <div className={cn(
-                        "w-1.5 h-1.5 rounded-full shrink-0",
-                        (project.status === "complete" || project.status === "Completed") && "bg-[#0b3b2a]",
-                        project.status === "drafted" && "bg-[#3730A3]",
-                        project.status === "not started" && "bg-neutral-400"
-                      )} />
-                      <span className="capitalize">{project.status}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Row: Tech Stack */}
-                <div className="flex flex-row sm:flex-row items-start p-4 border-b border-white/5 gap-2 sm:gap-4">
-                  <div className="flex items-center gap-2 w-20 sm:w-1/3 min-w-[120px] pt-1">
-                    <Folder className="w-4 h-4 text-text-secondary" />
-                    <span className="text-[13px] text-text-primary font-medium">Tech Stack</span>
-                  </div>
-                  <div className="flex-1 flex flex-wrap gap-2 text-[12px]">
-                    {project.techStack.map(tech => (
-                      <div key={tech.name} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md border border-white/5 bg-[#111111]/50 text-text-secondary">
-                        {tech.logoUrl && (
-                          <Image 
-                            src={tech.logoUrl} 
-                            alt={tech.name} 
-                            width={14} 
-                            height={14} 
-                            unoptimized 
-                            className={cn("object-contain opacity-80", tech.invert && "invert opacity-100")} 
-                          />
-                        )}
-                        <span className="font-medium text-[11px]">{tech.name}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
 
                 {/* Row: Description */}
                 <div className="flex flex-col p-4 border-b border-white/5 gap-3">
@@ -155,23 +107,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   </div>
                 </div>
 
-                {/* Row: Key Feature */}
-                {project.keyFeatures && project.keyFeatures.length > 0 && (
-                  <div className="flex flex-col p-4 gap-3">
-                    <div className="flex items-center gap-2">
-                      <Folder className="w-4 h-4 text-text-secondary" />
-                      <span className="text-[13px] text-text-primary font-medium">Key Feature</span>
-                    </div>
-                    <div className="bg-[#1D1D1D]/30 border border-white/5 rounded-xl p-4 flex flex-col gap-3">
-                      {project.keyFeatures.map((feature, i) => (
-                        <div key={i} className="flex items-start gap-2.5 text-[13px] text-text-secondary">
-                          <Check className="w-4 h-4 text-green-500 shrink-0 mt-[2px]" />
-                          <span className="leading-normal">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
 
             </FadeIn>

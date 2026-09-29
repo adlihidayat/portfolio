@@ -7,20 +7,26 @@ export function useInView(options?: IntersectionObserverInit) {
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
+    // Immediately reveal content on mount so mobile browsers never get stuck on blank screens
+    setIsInView(true);
 
-    const observer = new IntersectionObserver(([entry]) => {
-      // Trigger when element enters viewport
-      if (entry.isIntersecting) {
-        setIsInView(true);
-        // Unobserve to run animation only once
-        observer.unobserve(element);
+    const element = ref.current;
+    if (!element || typeof window === "undefined" || !("IntersectionObserver" in window)) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.unobserve(element);
+        }
+      },
+      {
+        threshold: 0.01,
+        ...options,
       }
-    }, {
-      threshold: 0.1,
-      ...options,
-    });
+    );
 
     observer.observe(element);
 
@@ -29,7 +35,7 @@ export function useInView(options?: IntersectionObserverInit) {
         observer.unobserve(element);
       }
     };
-  }, [options]);
+  }, []);
 
   return { ref, isInView };
 }

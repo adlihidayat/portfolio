@@ -1,61 +1,87 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-primary: #0c0c0c;
-  --color-bg-secondary: #141414;
-  --color-text-primary: #f7f7f7;
-  --color-text-secondary: #969696;
-  --color-btn-white: #f7f7f7;
-  --color-btn-black: #1d1d1d;
+  --color-text-title: #171717; /* Main headers, titles, dark text */
+  --color-text-body: #555555; /* Paragraphs, descriptions, body text */
+  --color-text-subtle: #a8a29e; /* Subtitles, dates, copyright, secondary text */
 
-  --spacing-section-y: 80px;
-  --spacing-section-x: 16px;
+  --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
 
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
-
-  --animate-scroll-left: scroll-left 30s linear infinite;
-  --animate-scroll-right: scroll-right 30s linear infinite;
-
-  @keyframes scroll-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  @keyframes scroll-right {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0); }
-  }
+  --animate-human-scroll: human-scroll 8s ease-in-out infinite;
 }
 
 :root {
-  --background: var(--color-bg-primary);
-  --foreground: var(--color-text-primary);
+  --background: #ffffff;
+  --foreground: var(--color-text-title);
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Text Selection Highlight Block (Grey instead of default blue) */
+::selection {
+  background-color: #e5e7eb;
+  color: #171717;
+}
+
+::-moz-selection {
+  background-color: #e5e7eb;
+  color: #171717;
 }
 
 @layer utilities {
-  /* Reusable section padding utility based on tokens */
-  .section-padding {
-    padding: var(--spacing-section-y) var(--spacing-section-x);
+  /* Reusable Typography & Theme Classes */
+
+  /* Main Headings & Bold Titles */
+  .text-heading {
+    font-size: 1rem; /* 14px on mobile */
+    font-weight: 500;
+    color: var(--color-text-title);
   }
 
+  /* Body Paragraphs & Descriptions */
+  .text-body {
+    font-size: 1rem; /* 14px on mobile */
+    font-weight: 400;
+    color: var(--color-text-body);
+  }
+
+  /* Subtle / Secondary Text (Roles, Subtitles, Month labels, Copyright) */
+  .text-subtle {
+    font-size: 1rem; /* 14px on mobile */
+    font-weight: 400;
+    color: var(--color-text-subtle);
+  }
+
+  /* Inline Link & Highlight Text (Black text, Grey underline default -> Black underline on hover) */
+  .text-link {
+    font-size: 1rem; /* 14px on mobile */
+    font-weight: 500;
+    color: var(--color-text-title);
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: #c7c5c5;
+    transition: text-decoration-color 0.2s ease;
+  }
+
+  .text-link:hover {
+    color: var(--color-text-title);
+    text-decoration-color: #171717;
+  }
+
+  /* Automatically scale typography to text-base (16px) on md screens (>=768px) */
   @media (min-width: 768px) {
-    .section-padding {
-      padding-block: 100px;
-      padding-inline: 32px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .section-padding {
-      padding-block: 120px;
-      padding-inline: 64px;
+    .text-heading,
+    .text-body,
+    .text-subtle,
+    .text-link {
+      font-size: 1rem; /* 16px */
     }
   }
 
@@ -63,7 +89,63 @@ body {
     display: none;
   }
   .hide-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #a8a29e #f5f5f4;
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 5px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f5f5f4;
+    border-radius: 9999px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #a8a29e;
+    border-radius: 9999px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover,
+  .custom-scrollbar::-webkit-scrollbar-thumb:active {
+    background: #57534e;
+  }
+}
+
+@keyframes human-scroll {
+  0% {
+    object-position: top;
+  }
+  15% {
+    object-position: top;
+  }
+  25% {
+    object-position: 50% 25%;
+  }
+  35% {
+    object-position: 50% 25%;
+  }
+  45% {
+    object-position: 50% 50%;
+  }
+  55% {
+    object-position: 50% 50%;
+  }
+  65% {
+    object-position: 50% 75%;
+  }
+  75% {
+    object-position: 50% 75%;
+  }
+  85% {
+    object-position: bottom;
+  }
+  95% {
+    object-position: bottom;
+  }
+  100% {
+    object-position: top;
   }
 }
