@@ -21,7 +21,7 @@ export function Footer() {
         {/* Social Links with Bullets */}
         <div className="flex flex-wrap items-center justify-center gap-2 text-body mb-2">
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/adlihdyt/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-stone-500 underline transition-colors text-black text-link"
@@ -30,7 +30,7 @@ export function Footer() {
           </a>
           <span className="text-stone-800 font-bold">•</span>
           <a
-            href="https://x.com"
+            href="https://x.com/DhiyaAdli30"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-stone-500 underline transition-colors text-black text-link"
@@ -39,7 +39,7 @@ export function Footer() {
           </a>
           <span className="text-stone-800 font-bold">•</span>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/dhiya-adli-hidayat/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-stone-500 underline transition-colors text-black text-link"
@@ -48,7 +48,7 @@ export function Footer() {
           </a>
           <span className="text-stone-800 font-bold">•</span>
           <a
-            href="https://youtube.com"
+            href="https://www.youtube.com/@adlicuy14"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-stone-500 underline transition-colors text-black text-link"

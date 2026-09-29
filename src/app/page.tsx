@@ -97,7 +97,7 @@ export default function Home() {
                 If you want to build something awesome together, let's connect!
                 find me on{" "}
                 <a
-                  href="https://x.com"
+                  href="https://x.com/DhiyaAdli30"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-link text-stone-900"
@@ -106,7 +106,7 @@ export default function Home() {
                 </a>{" "}
                 or send me an{" "}
                 <a
-                  href="#contact"
+                  href="mailto:dhiyaadli30@gmail.com"
                   className="inline-flex items-baseline gap-1 text-link"
                 >
                   <Mail className="w-3.5 h-3.5 text-red-600 self-center" />{" "}
